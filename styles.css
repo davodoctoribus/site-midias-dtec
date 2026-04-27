@@ -1,0 +1,76 @@
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+  --roxo-dtec: #30115F;
+  --azul-dtec: #020526; 
+  --azul-esc-dtec: #0c0620;
+  --amarelo-dtec: #ecc440;
+  --azul-bb-dtec: #5271ff;
+  --cinza-raitec: #e6e6e6;
+}
+
+
+body {
+  background-color: var(--azul-dtec); 
+  color: var(--amarelo-dtec);
+}
+
+#about {
+    background-color: var(--azul-esc-dtec); 
+}
+
+#sponsors {
+    width: 1280px;
+    height: auto;
+}
+
+#countdown {
+    background-color: var(--cinza-raitec); 
+}
+
+#wait {
+    background-color: var(--cinza-raitec); 
+}
+
+/* Agrupando seletores com as mesmas propriedades */
+footer, .footer-left {
+  display: flex;
+  align-items: center;
+}
+
+footer {
+  justify-content: space-between;  
+  padding: 0px 80px; /* Reduziu o padding superior e inferior de 20px para 10px */
+  background-color: var(--azul-dtec);
+    
+}
+
+.footer-left {
+  gap: 20px; 
+}
+
+
+footer p, footer a {
+  text-decoration: none;
+}
+
+footer p {
+  color: var(--cinza-raitec);
+  font-size: 16px;
+  margin: 0;
+}
+
+footer a {
+  color: var(--amarelo-dtec);
+  font-size: 28px; /* Reduzido de 48px */
+}
+footer a:hover {
+  color: var(--cinza-raitec);
+}
+
+#img-footer {
+    width: 160px; /* Reduzido de 328px */
+    height: auto;
+}
