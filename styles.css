@@ -1,7 +1,6 @@
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
-
 :root {
   --roxo-dtec: #30115F;
   --azul-dtec: #020526; 
@@ -17,7 +16,7 @@ body {
   color: var(--amarelo-dtec);
 }
 
-#about {
+.about {
     background-color: var(--azul-esc-dtec); 
 }
 
@@ -30,10 +29,168 @@ body {
     background-color: var(--cinza-raitec); 
 }
 
-#wait {
+.themes {
     background-color: var(--cinza-raitec); 
 }
 
+/* CONFIGURAÇÃO DA SEÇÃO ABOUT */
+.about, .themes{
+    background-color: var(--azul-esc-dtec); 
+    display: flex;
+    flex-direction: column; /* Empilha os itens (título, texto, imagem) */
+    align-items: center;    /* Centraliza todos os itens horizontalmente */
+    text-align: center;     /* Centraliza o texto dentro do parágrafo */
+    padding: 60px 20px;     /* Espaçamento interno para não grudar nas bordas */
+}
+
+.about-tittle-ctn {
+    display: flex;         /* Ativa o modo flexbox */
+    align-items: center;   /* Alinha verticalmente o texto e a imagem no centro */
+    gap: 0px;             /* Cria um espaço entre o texto e a imagem */
+}
+#about-tittle {
+    font-size: 3rem;
+    color: var(--cinza-raitec );            /* Cria um espaço entre o texto e a imagem */
+
+}
+
+#about-tittle-img {
+    height: 10rem;          /* Ajuste a altura para combinar com o tamanho da fonte */
+    width: auto;           /* Mantém a proporção da imagem */
+}
+
+#sponsors {
+   height: 8rem;          /* Ajuste a altura para combinar com o tamanho da fonte */
+    width: auto/3;
+}
+.about-txt {
+    padding-bottom: 40px;
+    max-width: 60%;          /* Limita a largura a 50% da tela */
+    margin-left: auto;       /* Margem automática na esquerda */
+    margin-right: auto;      /* Margem automática na direita */
+    text-align: center;      /* Garante que o texto dentro do bloco esteja centralizado */
+    line-height: 1.6;        /* Dica extra: aumenta o espaçamento entre linhas para melhor leitura */
+    font-size: 1.4rem;       /* Ajuste opcional do tamanho da fonte */
+    text-align: justify;
+}
+
+/* CONFIGURAÇÃO DA SEÇÃO THEMES */
+.themes {
+    background-color: var(--cinza-raitec);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    gap: 0;
+}
+
+.themes-tittle {
+    background-color: var(--amarelo-dtec);
+    font-size: 3rem;
+    margin-bottom: 40px;
+    color: var(--azul-esc-dtec);
+}
+
+/* SLIDER */
+.slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+/* Janela visível — recorta o que está fora */
+.themes-ctn {
+    padding-top: 40px;
+    width: 80%;
+    overflow: hidden;
+    border-radius: 36px;
+    cursor: grab;
+    user-select: none;
+}
+
+.themes-ctn.grabbing {
+    cursor: grabbing;
+}
+
+/* Trilha que se move */
+.slider-track {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+/* Card */
+.theme-card {
+    display: flex;
+    flex-shrink: 0;
+    width: 100%;
+    height: 540px;
+    background-color: white;
+    color: var(--azul-esc-dtec);
+    border-radius: 36px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.img-side {
+    flex: 1;
+}
+
+.img-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.content-side {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.card-tittle {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--azul-esc-dtec);
+}
+
+.card-txt {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: var(--azul-esc-dtec);
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+/* DOTS */
+.slider-dots {
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #aaa;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--amarelo-dtec);
+}
+
+/* CONFIGURAÇÃO DA SEÇÃO FOOTER */
 /* Agrupando seletores com as mesmas propriedades */
 footer, .footer-left {
   display: flex;
@@ -42,7 +199,7 @@ footer, .footer-left {
 
 footer {
   justify-content: space-between;  
-  padding: 0px 80px; /* Reduziu o padding superior e inferior de 20px para 10px */
+  padding: 20px 80px; 
   background-color: var(--azul-dtec);
     
 }
@@ -73,4 +230,133 @@ footer a:hover {
 #img-footer {
     width: 160px; /* Reduzido de 328px */
     height: auto;
+}
+
+/* =============================
+   RESPONSIVIDADE MOBILE
+   ============================= */
+
+@media (max-width: 768px) {
+
+    /* HEADER / NAV */
+    nav {
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+    }
+
+    #logo-dtec {
+        width: 120px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li {
+        list-style: none;
+    }
+
+    /* SEÇÃO ABOUT */
+    .about-tittle-ctn {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #about-tittle {
+        font-size: 2rem;
+    }
+
+    #about-tittle-img {
+        height: 6rem;
+    }
+
+    .about-txt {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+
+    #sponsors {
+        width: 100%;
+        height: auto;
+    }
+
+    /* COUNTDOWN */
+    #countdown {
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    #countdown h1 {
+        font-size: 1.6rem;
+    }
+
+    /* SEÇÃO THEMES */
+    .themes-tittle {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .themes-ctn {
+        width: 95%;
+        padding-top: 40px;
+    }
+
+    /* CARD — vira coluna no mobile */
+    .theme-card {
+        flex-direction: column;
+        height: auto;
+        border-radius: 20px;
+    }
+
+    .img-side {
+        width: 100%;
+        height: 200px;
+    }
+
+    .img-side img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .content-side {
+        padding: 20px;
+    }
+
+    .card-tittle {
+        font-size: 1.3rem;
+        margin-bottom: -20px;
+        padding-bottom: 0px;
+
+    }
+
+    .card-txt {
+        font-size: 1rem;
+    }
+
+    /* FOOTER */
+    footer {
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .footer-left {
+        justify-content: center;
+    }
+
+    #img-footer {
+        width: 160px;
+    }
+
+    footer p {
+        font-size: 13px;
+    }
 }
