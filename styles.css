@@ -37,40 +37,40 @@ body {
 .about, .themes{
     background-color: var(--azul-esc-dtec); 
     display: flex;
-    flex-direction: column; /* Empilha os itens (título, texto, imagem) */
-    align-items: center;    /* Centraliza todos os itens horizontalmente */
-    text-align: center;     /* Centraliza o texto dentro do parágrafo */
-    padding: 60px 20px;     /* Espaçamento interno para não grudar nas bordas */
+    flex-direction: column; 
+    align-items: center;    
+    text-align: center;    
+    padding: 60px 20px;     
 }
 
 .about-tittle-ctn {
-    display: flex;         /* Ativa o modo flexbox */
-    align-items: center;   /* Alinha verticalmente o texto e a imagem no centro */
-    gap: 0px;             /* Cria um espaço entre o texto e a imagem */
+    display: flex;         
+    align-items: center;   
+    gap: 0px;             
 }
 #about-tittle {
     font-size: 3rem;
-    color: var(--cinza-raitec );            /* Cria um espaço entre o texto e a imagem */
+    color: var(--cinza-raitec );           
 
 }
 
 #about-tittle-img {
-    height: 10rem;          /* Ajuste a altura para combinar com o tamanho da fonte */
-    width: auto;           /* Mantém a proporção da imagem */
+    height: 10rem;         
+    width: auto;         
 }
 
 #sponsors {
-   height: 8rem;          /* Ajuste a altura para combinar com o tamanho da fonte */
+   height: 8rem;       
     width: auto/3;
 }
 .about-txt {
     padding-bottom: 40px;
-    max-width: 60%;          /* Limita a largura a 50% da tela */
-    margin-left: auto;       /* Margem automática na esquerda */
-    margin-right: auto;      /* Margem automática na direita */
-    text-align: center;      /* Garante que o texto dentro do bloco esteja centralizado */
-    line-height: 1.6;        /* Dica extra: aumenta o espaçamento entre linhas para melhor leitura */
-    font-size: 1.4rem;       /* Ajuste opcional do tamanho da fonte */
+    max-width: 60%;         
+    margin-left: auto;      
+    margin-right: auto;     
+    text-align: center;     
+    line-height: 1.6;       
+    font-size: 1.4rem;     
     text-align: justify;
 }
 
@@ -100,7 +100,7 @@ body {
     width: 100%;
 }
 
-/* Janela visível — recorta o que está fora */
+/* Container */
 .themes-ctn {
     padding-top: 40px;
     width: 80%;
@@ -221,20 +221,18 @@ footer p {
 
 footer a {
   color: var(--amarelo-dtec);
-  font-size: 28px; /* Reduzido de 48px */
+  font-size: 28px;
 }
 footer a:hover {
   color: var(--cinza-raitec);
 }
 
 #img-footer {
-    width: 160px; /* Reduzido de 328px */
+    width: 160px; 
     height: auto;
 }
 
-/* =============================
-   RESPONSIVIDADE MOBILE
-   ============================= */
+/* RESPONSIVIDADE MOBILE */
 
 @media (max-width: 768px) {
 
