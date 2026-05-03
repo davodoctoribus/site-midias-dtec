@@ -8,35 +8,76 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel = "stylesheet" type = "text/css" href = "styles.css">
 
+    <!-- MAVEN PRO - SUBTITULO   -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
+
+    <!-- DOSIS - TEXTO   -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
+
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body id = "home">
 
     <header>
-        <nav>
-            <img id = "logo-dtec" src = "assets/logoDtec.svg">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#date">Data</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#countdown">Cronograma</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <div class="logo">
+                <img id = "logo-dtec" src = "assets/logoDtec.svg">
+            </div>
+
+            <nav>
+                <ul class="ul-menu">
+                    <li><a class="a-menu" href="#home">Home</a></li>
+                    <li><a class="a-menu" href="#countdown">Data</a></li>
+                    <li><a class="a-menu" href="#about">Sobre</a></li>
+                    <li><a class="a-menu" href="#themes">Cronograma</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
         
-        <section id="date">
+        <section class="hero"id="home">
             <img id = "hero-img" src = "assets/hero.png">
         </section>
 
         <section>
-            <div id = "countdown">
-                <h1>O evento está chegando...</h1>
-                <button type="button" class = "CTA-btn">Quero me inscrever</button>
+            <div id="parallax-spacer">
+                <div id="countdown">
+                    <h1 class="countdown-title">O EVENTO ESTÁ CHEGANDO...</h1>
+                    <div class="countdown-timer">
+                        <div class="countdown-unit">
+                            <span class="countdown-number" id="days">00</span>
+                            <span class="countdown-label">DIAS</span>
+                        </div>
+                        <span class="countdown-sep">:</span>
+                        <div class="countdown-unit">
+                            <span class="countdown-number" id="hours">00</span>
+                            <span class="countdown-label">HORAS</span>
+                        </div>
+                        <span class="countdown-sep">:</span>
+                        <div class="countdown-unit">
+                            <span class="countdown-number" id="minutes">00</span>
+                            <span class="countdown-label">MINUTOS</span>
+                        </div>
+                        <span class="countdown-sep">:</span>
+                        <div class="countdown-unit">
+                            <span class="countdown-number" id="seconds">00</span>
+                            <span class="countdown-label">SEGUNDOS</span>
+                        </div>
+                    </div>
+                    <button type="button" class="CTA-btn">QUERO ME INSCREVER!</button>
+                    <div class="css-track"></div>
+                    <img class="car-img" src="assets/Seguidor de Linha.png" alt="Carrinho">
+                </div>
             </div>
         </section>
 
-        <section class="about">
+        <section class="about" id="about">
             <div class = "about-tittle-ctn">
                 <h2 id = "about-tittle">O QUE É O </h2>
                 <img id = "about-tittle-img" src = "assets/logoDtec.svg">
@@ -46,7 +87,7 @@
             <img id = "sponsors" src = "assets/patrocinadores.svg">
         </section>
 
-    <section class="themes">
+    <section class="themes" id="themes">
         <h2 class="themes-tittle">ASSUNTOS ABORDADOS</h2>
 
         <div class="slider-wrapper">
@@ -108,6 +149,8 @@
 
         <p>&copy; Copyright © 2026, Todos os direitos reservados.</p>
     </footer>
+
+    <button id="back-to-top"><i class='bx bx-up-arrow-alt'></i></button>
 
     <script src="script.js"></script>
 </body>
