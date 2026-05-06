@@ -8,7 +8,6 @@ let startX = 0;
 let dragging = false;
 let dist = 0;
 
-// Gera dots
 cards.forEach((_, i) => {
     const dot = document.createElement('div');
     dot.classList.add('dot');
@@ -35,9 +34,8 @@ function onDragEnd() {
     goTo(current);
 }
 
-// Mouse
 window_.addEventListener('mousedown', (e) => {
-    e.preventDefault();         // impede o drag nativo do navegador
+    e.preventDefault();      
     dragging = true;
     startX = e.clientX;
     track.style.transition = 'none';
@@ -55,7 +53,7 @@ document.addEventListener('mouseup', () => {
     onDragEnd();
 });
 
-// COUNTDOWN ---------------------------------------------------------
+// ----------------------------------------------------------- COUNTDOWN ---------------------------------------------------------
 const EVENT_DATE = new Date("2026-05-11T00:00:00");
 
 function updateCountdown() {
@@ -84,7 +82,7 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// PARALLAX
+// ----------------------------------------------------------- PARALLAX -----------------------------------------------------------
 const spacer = document.getElementById("parallax-spacer");
 const car    = document.querySelector(".car-img");
 
@@ -105,27 +103,35 @@ window.addEventListener("scroll", updateParallax, { passive: true });
 window.addEventListener("resize", updateParallax);
 updateParallax();
 
-// BOTÃO VOLTAR AO TOPO
+// -------------------------------- BOTÃO VOLTAR AO TOPO -----------------------------------------------------------
+
 const backToTop = document.getElementById("back-to-top");
 
-// mostrar/esconder botão
 window.addEventListener("scroll", () => {
-    if (window.scrollY > 400) {
-        backToTop.classList.add("show");
-    } else {
-        backToTop.classList.remove("show");
-    }
+    backToTop.classList.toggle("show", window.scrollY > 400);
 }, { passive: true });
 
-// ação ao clicar (scroll suave)
 backToTop.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    const start = window.scrollY;
+    const duration = 1200;
+    const startTime = performance.now();
+
+    function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+
+    function step(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = easeInOutCubic(progress);
+        window.scrollTo(0, start * (1 - ease));
+        if (progress < 1) requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
 });
 
-// ===== CAROUSEL =====
+// ----------------------------------------------------------- CARROSSEL -----------------------------------------------------------
 (function () {
     const track = document.getElementById('carousel-track');
     const dotsContainer = document.getElementById('carousel-dots');
@@ -164,3 +170,31 @@ backToTop.addEventListener("click", () => {
         if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
     });
 })();
+
+// -------------------------------- MENU SANDUÍCHE --------------------------------------------
+const menuToggle  = document.getElementById("menu-toggle");
+const mainNav     = document.getElementById("main-nav");
+const navOverlay  = document.getElementById("nav-overlay");
+const navLinks    = document.querySelectorAll(".a-menu");
+
+function openMenu() {
+    menuToggle.classList.add("open");
+    mainNav.classList.add("open");
+    navOverlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closeMenu() {
+    menuToggle.classList.remove("open");
+    mainNav.classList.remove("open");
+    navOverlay.classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+menuToggle.addEventListener("click", () => {
+    mainNav.classList.contains("open") ? closeMenu() : openMenu();
+});
+
+navOverlay.addEventListener("click", closeMenu);
+
+navLinks.forEach(link => link.addEventListener("click", closeMenu));

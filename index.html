@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DTec - Desafio Tecnológico</title>
-    <meta name="description" content="Descrição breve da página para SEO.">
+    <meta name="description" content="Um desafio tecnológico para estudantes.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel = "stylesheet" type = "text/css" href = "styles.css">
+    <link rel = "stylesheet" type = "text/css" href = "style.css">
 
     <!-- MAVEN PRO - SUBTITULO   -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,25 +21,31 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 
-<!-- LIGHTBOX -->
-
 <body id = "home">
     <header>
         <div class="header-container">
-            <div class="logo">
-                <img id = "logo-dtec" src = "assets/logoDtec.svg">
+            <div class="logo" href="#home">
+                <img id="logo-dtec" src="assets/logoDtec.svg">
             </div>
 
-            <nav>
+            <button id="menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav id="main-nav">
                 <ul class="ul-menu">
-                    <li><a class="a-menu" href="#home">Home</a></li>
-                    <li><a class="a-menu" href="#countdown">Data</a></li>
-                    <li><a class="a-menu" href="#about">Sobre</a></li>
-                    <li><a class="a-menu" href="#themes">Cronograma</a></li>
+                    <li><a class="a-menu" href="#home">HOME</a></li>
+                    <li><a class="a-menu" href="#countdown">DATA</a></li>
+                    <li><a class="a-menu" href="#about">SOBRE</a></li>
+                    <li><a class="a-menu" href="#themes">CRONOGRAMA</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
+    <div id="nav-overlay"></div>
 
     <main>
         
