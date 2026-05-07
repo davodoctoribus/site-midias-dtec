@@ -286,9 +286,9 @@ section:has(#parallax-spacer) {
 
 .car-img {
     position: absolute;
-    bottom: 4px;
+    bottom: -4px;
     left: -180px;
-    width: 80px;
+    width: 60px;
     height: auto;
     transform: rotate(90deg);
     z-index: 2;
