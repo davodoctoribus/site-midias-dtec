@@ -54,6 +54,7 @@ document.addEventListener('mouseup', () => {
 });
 
 // ----------------------------------------------------------- COUNTDOWN ---------------------------------------------------------
+
 const EVENT_DATE = new Date("2026-05-11T00:00:00");
 
 function updateCountdown() {
@@ -83,11 +84,21 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 // ----------------------------------------------------------- PARALLAX -----------------------------------------------------------
+
+// PARALLAX
 const spacer = document.getElementById("parallax-spacer");
 const car    = document.querySelector(".car-img");
 
 function updateParallax() {
     if (!spacer || !car) return;
+
+    if (window.innerWidth <= 768) {
+        car.style.display = "none";
+        return;
+    }
+
+    car.style.display = "block";
+
     const spacerTop = spacer.getBoundingClientRect().top + window.scrollY;
     const scrollY   = window.scrollY;
     const start     = spacerTop;
@@ -132,6 +143,7 @@ backToTop.addEventListener("click", () => {
 });
 
 // ----------------------------------------------------------- CARROSSEL -----------------------------------------------------------
+
 (function () {
     const track = document.getElementById('carousel-track');
     const dotsContainer = document.getElementById('carousel-dots');
@@ -172,6 +184,7 @@ backToTop.addEventListener("click", () => {
 })();
 
 // -------------------------------- MENU SANDUÍCHE --------------------------------------------
+
 const menuToggle  = document.getElementById("menu-toggle");
 const mainNav     = document.getElementById("main-nav");
 const navOverlay  = document.getElementById("nav-overlay");

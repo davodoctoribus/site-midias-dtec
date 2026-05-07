@@ -106,7 +106,6 @@ nav {
 .a-menu.active { color: var(--branco-puro); }
 .a-menu.active::after { width: 100%; }
 
-/* Botão sanduíche — escondido no desktop */
 #menu-toggle {
     display: none;
     flex-direction: column;
@@ -574,6 +573,7 @@ footer p {
 /* ------------------------------------------------------------
    BOTÃO VOLTAR AO TOPO
    ------------------------------------------------------------ */
+   
 #back-to-top {
     position: fixed;
     bottom: 3rem;
