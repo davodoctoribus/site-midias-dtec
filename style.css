@@ -914,3 +914,9 @@
         .themes-ctn { width: 70%; }
         .theme-card { height: 460px; }
     }
+
+@media (max-width: 768px) {
+    #parallax-spacer {
+        height: 150vh; /* reduzido, mas ainda permite o efeito */
+    }
+}

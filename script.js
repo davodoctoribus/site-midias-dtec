@@ -350,3 +350,18 @@
 
     buildGallery();
 })();
+
+function updateParallax() {
+    if (!spacer || !car) return;
+    const spacerTop = spacer.getBoundingClientRect().top + window.scrollY;
+    const scrollY   = window.scrollY;
+    const start     = spacerTop;
+    const end       = spacerTop + spacer.offsetHeight - window.innerHeight;
+
+    if (end <= start) return; // evita divisão por zero em telas pequenas
+
+    const progress  = Math.min(Math.max((scrollY - start) / (end - start), 0), 1);
+    const startX = -180;
+    const endX   = window.innerWidth + 180;
+    car.style.left = (startX + (endX - startX) * progress) + "px";
+}
