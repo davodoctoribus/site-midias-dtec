@@ -6,23 +6,31 @@
     <title>DTec - Desafio Tecnológico</title>
     <meta name="description" content="Um desafio tecnológico para estudantes.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel = "stylesheet" type = "text/css" href = "style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="icon" type="image/png" href="assets/Seguidor de Linha.png">
 
-    <!-- MAVEN PRO - SUBTITULO   -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
 
-    <!-- DOSIS - TEXTO   -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
 
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
+<!-- LIGHTBOX -->
+<div id="lightbox" aria-modal="true" role="dialog" aria-label="Visualizar foto">
+        <button id="lightbox-close" aria-label="Fechar"><i class="bx bx-x"></i></button>
+    <button id="lightbox-prev" aria-label="Foto anterior"><i class="bx bx-chevron-left"></i></button>
+    <img id="lightbox-img" src="" alt="">
+    <button id="lightbox-next" aria-label="Próxima foto"><i class="bx bx-chevron-right"></i></button>
+</div>
 
-<body id = "home">
+<button id="back-to-top"><i class='bx bx-up-arrow-alt'></i></button>
+
+</body>
+<body id="home">
     <header>
         <div class="header-container">
             <div class="logo">
@@ -43,6 +51,7 @@
                     <li><a class="a-menu" href="#countdown">DATA</a></li>
                     <li><a class="a-menu" href="#about">SOBRE</a></li>
                     <li><a class="a-menu" href="#themes">CRONOGRAMA</a></li>
+                    <li><a class="a-menu" href="#gallery">GALERIA</a></li>
                 </ul>
             </nav>
         </div>
@@ -53,7 +62,7 @@
     <main>
         
         <section class="hero" id="home">
-            <img id = "hero-img" src = "assets/hero.png">
+            <img id="hero-img" src="assets/hero.png">
         </section>
 
         <section>
@@ -89,17 +98,27 @@
         </section>
 
         <section class="about" id="about">
-            <div class = "about-tittle-ctn">
-                <h2 class = "about-tittle">O QUE É O </h2>
-                <img id = "about-tittle-img" src = "assets/logoDtec.svg">
-                <h2 class = "about-tittle">?</h2>
+            <div class="about-tittle-ctn">
+                <h2 class="about-tittle">O QUE É O </h2>
+                <img id="about-tittle-img" src="assets/logoDtec.svg">
+                <h2 class="about-tittle">?</h2>
             </div>
 
-            <p class = "about-txt">Lorem ipsum dolor sit abra charmander mewtwo machop machoke machamp amalekazamet, consectetur adipiscing elit. Donec faucibus est ut nunc facilisis ultrices. Suspendisse porta vulputate nulla, quis dictum leo volutpat ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus est ut nunc facilisis ultrices. Suspendisse porta vulputate nulla, quis dictum leo volutpat ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus est ut nunc facilisis ultrices. Suspendisse porta vulputate nulla, quis dictum leo volutpat ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus est ut nunc facilisis ultrices. Suspendisse porta vulputate nulla, quis dictum leo volutpat ut. </p>
-            <div id = "sponsors"> 
-                <img id = "sponsors" src = "assets/patrocinador.png">
-                <img id = "sponsors" src = "assets/patrocinador.png">
-                <img id = "sponsors" src = "assets/patrocinador.png">
+            <p class="about-txt">O DTEC consolidou-se como um dos principais eventos de inovação tecnológica dentro da Universidade Federal do Ceará (UFC).
+Com o objetivo de conectar a produção acadêmica às demandas do mercado, o encontro promove um diálogo essencial entre estudantes e empresas.
+Sua programação é composta por palestras inspiradoras, rodadas de negócios e workshops práticos que estimulam o pensamento disruptivo.
+É um ambiente vibrante onde o empreendedorismo é incentivado, transformando pesquisas complexas em soluções aplicáveis ao cotidiano.
+
+Além disso, o evento serve como uma vitrine para os talentos da universidade, permitindo que jovens desenvolvedores exibam seus projetos.
+A troca de experiências entre veteranos do setor e acadêmicos fortalece o ecossistema de ciência e tecnologia de todo o estado.
+Ao participar do DTEC, o aluno expande seu networking e compreende melhor os desafios reais da indústria moderna.
+Em suma, o evento é um motor de progresso que reafirma o papel da UFC como polo de excelência e inovação no Brasil.  </p>
+
+            <!-- Corrigido: ID duplicado trocado por classe .sponsors -->
+            <div class="sponsors"> 
+                <img src="assets/patrocinador.png" alt="Patrocinador">
+                <img src="assets/patrocinador.png" alt="Patrocinador">
+                <img src="assets/patrocinador.png" alt="Patrocinador">
             </div>
         </section>
 
@@ -112,34 +131,34 @@
 
                         <div class="theme-card">
                             <div class="img-side">
-                                <img src="assets/wait-1.jpg" alt="IOT">
+                                <img src="assets/iot.jpg" alt="IOT">
                             </div>
                             <div class="content-side">
                                 <h3 class="card-tittle">Internet of Things (IoT)</h3>
                                 <hr>
-                                <p class="card-txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus est ut nunc facilisis ultrices. Suspendisse porta vulputate nulla, quis dictum leo volutpat ut.</p>
+                                <p class="card-txt">A IoT revoluciona a conexão entre o mundo físico e o digital ao integrar sensores e softwares em objetos do cotidiano. No contexto do DTEC, discute-se como essa rede de dispositivos inteligentes otimiza processos industriais e cria cidades mais eficientes. </p>
                             </div>
                         </div>
 
                         <div class="theme-card">
                             <div class="img-side">
-                                <img src="assets/wait-2.jpg" alt="IA">
+                                <img id = "IA-img" src="assets/IA.jpg" alt="IA">
                             </div>
                             <div class="content-side">
                                 <h3 class="card-tittle">Inteligência Artificial</h3>
                                 <hr>
-                                <p class="card-txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus est ut nunc facilisis ultrices. Suspendisse porta vulputate nulla, quis dictum leo volutpat ut.</p>
+                                <p class="card-txt">A Inteligência Artificial atua como o cérebro das novas tecnologias, permitindo que máquinas aprendam, raciocinem e tomem decisões autônomas. Durante o evento, são explorados algoritmos de machine learning e redes neurais que transformam grandes volumes de dados em insights estratégicos.</p>
                             </div>
                         </div>
 
                         <div class="theme-card">
                             <div class="img-side">
-                                <img src="assets/wait-3.jpg" alt="Cibersegurança">
+                                <img src="assets/programação.jpg" alt="Programação">
                             </div>
                             <div class="content-side">
-                                <h3 class="card-tittle">Cibersegurança</h3>
+                                <h3 class="card-tittle">Programação</h3>
                                 <hr>
-                                <p class="card-txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus est ut nunc facilisis ultrices. Suspendisse porta vulputate nulla, quis dictum leo volutpat ut.</p>
+                                <p class="card-txt">A Programação é a linguagem fundamental que sustenta toda a inovação discutida no DTEC, sendo o alicerce para construir softwares e sistemas. Ela permite que ideias abstratas se tornem ferramentas concretas através do domínio de diversas linguagens e paradigmas de desenvolvimento. </p>
                             </div>
                         </div>
 
@@ -147,6 +166,41 @@
                 </div>
                 <div class="slider-dots" id="slider-dots"></div>
             </div>
+        </section>
+        <section class="gallery" id="gallery">
+            <h2 class="gallery-title">GALERIA DE FOTOS</h2>
+
+            <div class="gallery-slider-wrapper">
+                <button class="gallery-arrow gallery-prev" aria-label="Foto anterior">
+                    <i class="bx bx-chevron-left"></i>
+                </button>
+
+                <div class="gallery-track-ctn">
+                    <div class="gallery-track" id="gallery-track">
+
+                        <!-- PÁGINA 1 -->
+                        <div class="gallery-page">
+                            <div class="gallery-slide"><img src="assets/img-evento.jpg" alt="Foto do evento 1"></div>
+                            <div class="gallery-slide"><img src="assets/img-evento2.jpg" alt="Foto do evento 2"></div>
+                            <div class="gallery-slide"><img src="assets/img-evento3.jpg" alt="Foto do evento 3"></div>
+                        </div>
+
+                        <!-- PÁGINA 2 -->
+                        <div class="gallery-page">
+                            <div class="gallery-slide"><img src="assets/img-evento4.jpg" alt="Foto do evento 4"></div>
+                            <div class="gallery-slide"><img src="assets/img-evento5.jpg" alt="Foto do evento 5"></div>
+                            <div class="gallery-slide"><img src="assets/img-evento6.jpg" alt="Foto do evento 6"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="gallery-arrow gallery-next" aria-label="Próxima foto">
+                    <i class="bx bx-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="gallery-dots" id="gallery-dots"></div>
         </section>
     </main>
 
@@ -158,7 +212,7 @@
             <a href="https://www.youtube.com/@raitecufc9945" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-youtube"></i>
             </a>
-            <a href = "#home">
+            <a href="#home">
                 <img id="img-footer" src="assets/logoDtec.svg" alt="Logo Dtec">
             </a>
         </div>
